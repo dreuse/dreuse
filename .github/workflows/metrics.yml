@@ -6,7 +6,7 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    environment:
+    environment: 
       name: production
     permissions:
       contents: write
@@ -14,36 +14,8 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-
-          # Languages
+          plugin_calendar: yes
           plugin_languages: yes
           plugin_languages_indepth: yes
-          plugin_languages_colors: rainbow
           commits_authoring: sueder morais, dreuse, dreuse@users.noreply.github.com, smorais
-
-          # 3D isometric commit calendar (replaces flat calendar)
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
-
-          # Coding habits with activity charts
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
-          plugin_habits_charts_type: classic
-
-          # Achievements (compact to save space)
-          plugin_achievements: yes
-          plugin_achievements_threshold: B
-          plugin_achievements_display: compact
-
-          # Starred topics with icons
-          plugin_topics: yes
-          plugin_topics_mode: icons
-          plugin_topics_sort: stars
-          plugin_topics_limit: 15
-
-          # Lines of code changed
-          plugin_lines: yes
-          plugin_lines_sections: base, repositories
+          plugin_languages_colors: rainbow
